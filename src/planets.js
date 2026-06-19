@@ -1,0 +1,173 @@
+/**
+ * planets.js
+ * Static data for every body in the scene.
+ *
+ * Sizes and distances are stylised — not to scale — but the relative
+ * ordering is preserved so the whole system stays readable on screen.
+ */
+
+export const SUN = {
+  name: "Sun",
+  radius: 6,
+  texture: "/textures/sun.png",
+  tag: "G-type main-sequence star",
+  desc: "The Sun is the star at the heart of our Solar System. It accounts for about 99.86 % of the system's total mass and its gravity holds every planet in orbit.",
+  stats: {
+    Type: "Yellow dwarf",
+    Diameter: "1,391,000 km",
+    "Surface temp": "5,500 °C",
+    Age: "4.6 billion yrs",
+  },
+}
+
+export const PLANETS = [
+  {
+    name: "Mercury",
+    texture: "/textures/mercury.png",
+    radius: 0.55,
+    distance: 11,
+    orbitSpeed: 1.6,
+    spinSpeed: 0.004,
+    tilt: 0.01,
+    tag: "Terrestrial planet",
+    desc: "The smallest planet and closest to the Sun. Mercury has almost no atmosphere, so temperatures swing from scorching days to freezing nights.",
+    stats: {
+      Moons: "0",
+      Day: "59 Earth days",
+      Year: "88 days",
+      Gravity: "3.7 m/s²",
+    },
+  },
+  {
+    name: "Venus",
+    texture: "/textures/venus.png",
+    radius: 0.95,
+    distance: 15,
+    orbitSpeed: 1.17,
+    spinSpeed: 0.002,
+    tilt: 0.05,
+    tag: "Terrestrial planet",
+    desc: "Wrapped in thick sulfuric-acid clouds, Venus is the hottest planet in the Solar System thanks to a runaway greenhouse effect.",
+    stats: {
+      Moons: "0",
+      Day: "243 Earth days",
+      Year: "225 days",
+      Gravity: "8.9 m/s²",
+    },
+  },
+  {
+    name: "Earth",
+    texture: "/textures/earth.png",
+    radius: 1,
+    distance: 20,
+    orbitSpeed: 1,
+    spinSpeed: 0.01,
+    tilt: 0.41,
+    tag: "Our home world",
+    desc: "The only known planet to harbour life. Liquid water covers about 71 % of its surface beneath a protective nitrogen–oxygen atmosphere.",
+    stats: {
+      Moons: "1",
+      Day: "24 hours",
+      Year: "365 days",
+      Gravity: "9.8 m/s²",
+    },
+    moons: [
+      { radius: 0.27, distance: 2, speed: 2.2, color: 0xcfd2da },
+    ],
+  },
+  {
+    name: "Mars",
+    texture: "/textures/mars.png",
+    radius: 0.7,
+    distance: 26,
+    orbitSpeed: 0.8,
+    spinSpeed: 0.009,
+    tilt: 0.44,
+    tag: "The Red Planet",
+    desc: "Iron-oxide dust gives Mars its rusty colour. It hosts the tallest volcano and the deepest canyon of any planet in the Solar System.",
+    stats: {
+      Moons: "2",
+      Day: "24.6 hours",
+      Year: "687 days",
+      Gravity: "3.7 m/s²",
+    },
+    moons: [
+      { radius: 0.12, distance: 1.4, speed: 3.0, color: 0xb0a89a },
+      { radius: 0.09, distance: 2.1, speed: 2.1, color: 0x988f80 },
+    ],
+  },
+  {
+    name: "Jupiter",
+    texture: "/textures/jupiter.png",
+    radius: 3.2,
+    distance: 38,
+    orbitSpeed: 0.43,
+    spinSpeed: 0.02,
+    tilt: 0.05,
+    tag: "Gas giant",
+    desc: "The largest planet — so big that all the others could fit inside it. Its Great Red Spot is a storm that has raged for centuries.",
+    stats: {
+      Moons: "95",
+      Day: "9.9 hours",
+      Year: "12 years",
+      Gravity: "24.8 m/s²",
+    },
+    moons: [
+      { radius: 0.20, distance: 4.4, speed: 1.8, color: 0xe8e2d0 },
+      { radius: 0.18, distance: 5.3, speed: 1.3, color: 0xc9b48a },
+    ],
+  },
+  {
+    name: "Saturn",
+    texture: "/textures/saturn.png",
+    radius: 2.7,
+    distance: 50,
+    orbitSpeed: 0.32,
+    spinSpeed: 0.018,
+    tilt: 0.47,
+    tag: "Ringed gas giant",
+    desc: "Famous for its dazzling ring system made of ice and rock. Saturn is the least dense planet — it would float in water.",
+    stats: {
+      Moons: "146",
+      Day: "10.7 hours",
+      Year: "29 years",
+      Gravity: "10.4 m/s²",
+    },
+    ring: { inner: 3.4, outer: 5.6, color: 0xd8c9a3 },
+  },
+  {
+    name: "Uranus",
+    texture: "/textures/uranus.png",
+    radius: 1.8,
+    distance: 60,
+    orbitSpeed: 0.23,
+    spinSpeed: 0.012,
+    tilt: 1.71,
+    tag: "Ice giant",
+    desc: "An ice giant that spins on its side, likely after a colossal ancient collision. Methane in its atmosphere gives it a pale cyan hue.",
+    stats: {
+      Moons: "28",
+      Day: "17 hours",
+      Year: "84 years",
+      Gravity: "8.7 m/s²",
+    },
+    ring: { inner: 2.3, outer: 3.1, color: 0x9fc6d6 },
+  },
+  {
+    name: "Neptune",
+    texture: "/textures/neptune.png",
+    radius: 1.75,
+    distance: 69,
+    orbitSpeed: 0.18,
+    spinSpeed: 0.013,
+    tilt: 0.49,
+    tag: "Ice giant",
+    desc: "The most distant planet — a deep-blue world whipped by the fastest winds in the Solar System, over 2,000 km/h.",
+    stats: {
+      Moons: "16",
+      Day: "16 hours",
+      Year: "165 years",
+      Gravity: "11 m/s²",
+    },
+  },
+]
