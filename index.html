@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An interactive 3D model of the Solar System built with Three.js."
+    />
+    <meta name="theme-color" content="#05060f" />
+    <title>Orrery · Interactive 3D Solar System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Three.js renders into this canvas -->
+    <canvas id="scene"></canvas>
+
+    <!-- Loading overlay -->
+    <div id="loader" class="loader">
+      <div class="loader__ring"></div>
+      <p class="loader__text">Charting the system&hellip;</p>
+    </div>
+
+    <!-- Top bar -->
+    <header class="hud hud--top">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <div>
+          <h1 class="brand__title">ORRERY</h1>
+          <p class="brand__sub">Interactive 3D Solar System</p>
+        </div>
+      </div>
+      <p class="hint">Drag to orbit &middot; Scroll to zoom &middot; Click a planet</p>
+    </header>
+
+    <!-- Controls panel -->
+    <section class="hud hud--controls" aria-label="Scene controls">
+      <label class="control">
+        <span>Orbit speed</span>
+        <input id="speed" type="range" min="0" max="4" step="0.1" value="1" />
+      </label>
+      <button id="toggle-orbits" class="btn" type="button" aria-pressed="true">
+        Orbit lines: On
+      </button>
+      <button id="toggle-spin" class="btn" type="button" aria-pressed="true">
+        Motion: On
+      </button>
+    </section>
+
+    <!-- Planet info card -->
+    <aside id="info" class="info" aria-live="polite" hidden>
+      <button id="info-close" class="info__close" aria-label="Close">&times;</button>
+      <h2 id="info-name" class="info__name"></h2>
+      <p id="info-tag" class="info__tag"></p>
+      <p id="info-desc" class="info__desc"></p>
+      <dl id="info-stats" class="info__stats"></dl>
+    </aside>
+
+    <!-- Bottom status bar -->
+    <footer class="hud hud--bottom">
+      <span id="focus-label">Free camera</span>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
